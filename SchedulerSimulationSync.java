@@ -49,13 +49,15 @@ public static final ReentrantLock contextSwitchLock = new ReentrantLock();
     // TODO #2: Add a Semaphore to limit concurrent process execution
     // Example: public static final Semaphore cpuSemaphore = new Semaphore(1);
 
-    // Method to increment context switch counter
+      // Method to increment context switch counter
     public static void incrementContextSwitch() {
-        // TODO: Protect this critical section with a lock
-        // RACE CONDITION: Multiple threads might read and write simultaneously!
-        contextSwitchCount++;
-    }
-
+        contextSwitchLock.lock();
+        try {
+            contextSwitchCount++;
+        } finally {
+            contextSwitchLock.unlock();
+        }
+   
     // Method to increment completed process counter
     public static void incrementCompletedProcess() {
         // TODO: Protect this critical section with a lock
