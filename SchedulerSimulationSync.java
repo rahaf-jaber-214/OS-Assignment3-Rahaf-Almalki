@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.ReentrantLock;
 // ANSI Color Codes for enhanced terminal output
 class Colors {
     public static final String RESET = "\u001B[0m";
@@ -30,7 +31,11 @@ class SharedResources {
     // TODO: Students will add synchronization mechanisms here
     // HINT: Use ReentrantLock for mutual exclusion
     // HINT: Use Semaphore for limiting concurrent access
-
+public static final ReentrantLock contextSwitchLock = new ReentrantLock();
+    public static final ReentrantLock completedProcessLock = new ReentrantLock();
+    public static final ReentrantLock waitingTimeLock = new ReentrantLock();
+    public static final ReentrantLock logLock = new ReentrantLock();
+    
     public static int contextSwitchCount = 0; // Shared counter - NEEDS PROTECTION!
     public static int completedProcessCount = 0; // Shared counter - NEEDS PROTECTION!
     public static long totalWaitingTime = 0; // Shared accumulator - NEEDS PROTECTION!
