@@ -56,7 +56,7 @@ public static final ReentrantLock contextSwitchLock = new ReentrantLock();
             contextSwitchCount++;
         } finally {
             contextSwitchLock.unlock();
-        }
+        }}
    
     // Method to increment completed process counter
     public static void incrementCompletedProcess() {
