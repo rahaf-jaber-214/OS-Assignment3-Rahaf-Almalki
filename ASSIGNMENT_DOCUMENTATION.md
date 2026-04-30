@@ -348,28 +348,29 @@ Think of a common whiteboard that multiple students need to use. When more than 
 
 **Repository URL**: https://github.com/rahaf-jaber-214/OS-Assignment3-Rahaf-Almalki/edit/main/ASSIGNMENT_DOCUMENTATION.md
 
-**Number of commits**: 
+**Number of commits**: 9
 
 **Commit messages**: 
-1. 
-2. 
-3. 
-4. 
+1. set my student id 445052147
+2. add reentrantlok
+3. add semaphore 
+4. switch countr
 
 ---
 
 ## Summary
 
-**Total time spent on assignment**: 
+**Total time spent on assignment**: 20 hours
 
 **Key takeaways**: 
-1. 
-2. 
-3. 
+1.  Fine‑grained locking improves performance for independent resources
+2. try-finally is the only safe way to release locks
+3. A semaphore can control both mutual exclusion and resource limits.
 
-**Most challenging aspect**: 
+**Most challenging aspect**:  Deciding on lock granularity and proving that separate locks
+are safe
 
-**What I'm most proud of**: 
+**What I'm most proud of**:  The final program runs deterministically
 
 ---
 
